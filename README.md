@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+This is the **frontend** for the Team collab Task Manager application, built with:
+
+* **Next.js (App Router)**
+* **Tailwind CSS**
+* **Axios**
+* Communicates with a backend made using **Node.js + Express + Mongoose**
+
+The app allows you to:
+
+✔ Create Boards
+✔ View Boards
+✔ Create Tasks inside a Board
+✔ Update Task Status
+✔ Update Task Priority
+✔ Delete Tasks
+✔ Clean UI with Tailwind CSS
+
+---
+
+
+### **1. Install dependencies**
+
+```bash
+npm install
+# or
+yarn install
+```
+
+---
+
+### **2. Configure Environment Variables**
+
+Create a `.env.local` file in the project root:
+
+```
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+Your Axios instance (in `/lib/api.js`) should automatically use this value.
+
+---
+
+### **3. Run Development Server**
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser at:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+👉 **[http://localhost:5000](http://localhost:5000)**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📁 **Project Structure**
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+ ├── page.js                // Board listing page
+ ├── board/[id]/page.js     // Board details + tasks
+components/                 // UI components (if any)
+lib/
+ └── api.js                 // Axios API instance
+public/                     // Static assets
+styles/
+ └── globals.css            // Tailwind base styles
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 **Tech Stack**
 
-## Deploy on Vercel
+### **Frontend**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Next.js 13+ (App Router)
+* Tailwind CSS
+* Axios
+* React Hooks
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Backend (Separate Repository)**
+
+* Node.js
+* Express.js
+* MongoDB + Mongoose
+
+---
+
+## 🔌 **API Endpoints (Used by Frontend)**
+
+### **Boards**
+
+| Method | Endpoint  | Description        |
+| ------ | --------- | ------------------ |
+| GET    | `/boards` | Get all boards     |
+| POST   | `/boards` | Create a new board |
+
+### **Tasks**
+
+| Method | Endpoint                | Description                                 |
+| ------ | ----------------------- | ------------------------------------------- |
+| GET    | `/boards/:id/tasks`     | Get tasks for a specific board              |
+| POST   | `/tasks/:boardId/tasks` | Create task under board                     |
+| PUT    | `/tasks/:taskId`        | Update task fields (status, priority, etc.) |
+| DELETE | `/tasks/:taskId`        | Delete a task                               |
+
+---
+
+## 📦 **Build for Production**
+
+```bash
+npm run build
+npm start
+```
+
+The app will compile optimized production assets.
+
