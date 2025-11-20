@@ -48,7 +48,7 @@ const { id } = use(params);
 
       <h1 className="text-3xl font-bold mt-4 mb-6">Board Tasks</h1>
 
-      {/* Create Task */}
+    
       <div className="bg-white shadow p-5 rounded-lg mb-6">
         <h2 className="font-semibold text-lg mb-3">Create New Task</h2>
 
@@ -79,7 +79,6 @@ const { id } = use(params);
         </div>
       </div>
 
-      {/* Task Columns */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {Object.keys(grouped).map((status) => (
           <div key={status} className="bg-gray-100 p-4 rounded-lg shadow-sm">
@@ -104,7 +103,7 @@ const { id } = use(params);
               >
                 <p className="font-medium">{task.title}</p>
 
-                {/* Priority Tag */}
+          
                 <span
                   className={`inline-block text-xs px-2 py-1 rounded mt-2 ${
                     task.priority === "High"
@@ -117,7 +116,7 @@ const { id } = use(params);
                   {task.priority}
                 </span>
 
-                {/* Status Dropdown */}
+     
                 <select
                   className="mt-3 border p-2 rounded w-full"
                   value={task.status}
