@@ -1,36 +1,48 @@
 
+````md
+# Team Collab Task Manager – Frontend
 
-This is the **frontend** for the Team collab Task Manager application, built with:
+This is the **frontend** for the Team Collab Task Manager application, built with:
 
-* **Next.js (App Router)**
-* **Tailwind CSS**
-* **Axios**
-* Communicates with a backend made using **Node.js + Express + Mongoose**
+- **Next.js (App Router)**
+- **Tailwind CSS**
+- **Axios**
+- Communicates with a backend made using **Node.js + Express + Mongoose**
 
 The app allows you to:
 
-✔ Create Boards
-✔ View Boards
-✔ Create Tasks inside a Board
-✔ Update Task Status
-✔ Update Task Priority
-✔ Delete Tasks
-✔ Clean UI with Tailwind CSS
+✔ Create Boards  
+✔ View Boards  
+✔ Create Tasks inside a Board  
+✔ Update Task Status  
+✔ Update Task Priority  
+✔ Delete Tasks  
+✔ Clean UI with Tailwind CSS  
 
 ---
 
+## 🌐 Live URLs
 
-### **1. Install dependencies**
+### **Frontend (Live URL)**
+👉 https://team-collab-delta.vercel.app/
+
+### **Backend API (Live URL)**
+👉 https://team-collab-backend-fibv.onrender.com/
+
+
+---
+
+## 1. Install dependencies
 
 ```bash
 npm install
 # or
 yarn install
-```
+````
 
 ---
 
-### **2. Configure Environment Variables**
+## 2. Configure Environment Variables
 
 Create a `.env.local` file in the project root:
 
@@ -38,11 +50,11 @@ Create a `.env.local` file in the project root:
 NEXT_PUBLIC_API_URL=http://localhost:5000
 ```
 
-Your Axios instance (in `/lib/api.js`) should automatically use this value.
+Your Axios instance (in `/lib/api.js`) will use this value.
 
 ---
 
-### **3. Run Development Server**
+## 3. Run Development Server
 
 ```bash
 npm run dev
@@ -56,7 +68,7 @@ Open your browser at:
 
 ---
 
-## 📁 **Project Structure**
+## 📁 Project Structure
 
 ```
 app/
@@ -72,16 +84,16 @@ styles/
 
 ---
 
-## 🛠 **Tech Stack**
+## 🛠 Tech Stack
 
-### **Frontend**
+### Frontend
 
 * Next.js 13+ (App Router)
 * Tailwind CSS
 * Axios
 * React Hooks
 
-### **Backend (Separate Repository)**
+### Backend (Separate Repository)
 
 * Node.js
 * Express.js
@@ -89,16 +101,16 @@ styles/
 
 ---
 
-## 🔌 **API Endpoints (Used by Frontend)**
+## 🔌 API Endpoints (Used by Frontend)
 
-### **Boards**
+### Boards
 
 | Method | Endpoint  | Description        |
 | ------ | --------- | ------------------ |
 | GET    | `/boards` | Get all boards     |
 | POST   | `/boards` | Create a new board |
 
-### **Tasks**
+### Tasks
 
 | Method | Endpoint                | Description                                 |
 | ------ | ----------------------- | ------------------------------------------- |
@@ -109,7 +121,7 @@ styles/
 
 ---
 
-## 📦 **Build for Production**
+## 📦 Build for Production
 
 ```bash
 npm run build
